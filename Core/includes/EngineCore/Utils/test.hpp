@@ -1,0 +1,4 @@
+namespace PrintEngine
+{
+	void startCore();
+}
