@@ -1,11 +1,19 @@
-#include<iostream>
-#include"EngineCore/Utils/test.hpp"
+#pragma once 
+#include"EngineCore/application.hpp"
 #include<GLFW/glfw3.h>
-namespace PrintEngine
+#include<iostream>
+namespace Engine
 {
-	int checGLWF()
+	Application::Application()
 	{
-		std::cout << "Core" << std::endl;
+
+	}
+	Application::~Application()
+	{
+
+	}
+	int Application::start(unsigned int window_width, unsigned int window_height, const char* Engine)
+	{
         GLFWwindow* window;
 
         /* Initialize the library */
@@ -13,7 +21,7 @@ namespace PrintEngine
             return -1;
 
         /* Create a windowed mode window and its OpenGL context */
-        window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+        window = glfwCreateWindow(window_width, window_height, Engine, NULL, NULL);
         if (!window)
         {
             glfwTerminate();
@@ -34,6 +42,8 @@ namespace PrintEngine
 
             /* Poll for and process events */
             glfwPollEvents();
+
+            on_update();
         }
 
         glfwTerminate();
