@@ -3,6 +3,6 @@
 int main()
 {
 	std::cout << "Editor" << std::endl;
-	PrintEngine::startCore();
+	PrintEngine::checGLWF();
 	std::cin.get();
 }

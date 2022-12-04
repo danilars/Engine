@@ -1,4 +1,4 @@
 namespace PrintEngine
 {
-	void startCore();
+	int checGLWF();
 }
